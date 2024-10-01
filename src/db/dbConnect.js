@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-import { DB_NAME } from "../constants.js";
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
@@ -9,12 +8,9 @@ const connectDB = async () => {
     if (!mongoUri) {
       throw new Error("MONGODB_URI environment variable is not set.");
     }
-    if (!DB_NAME) {
-      throw new Error("DB_NAME environment variable is not set.");
-    }
 
     // Attempt to connect to MongoDB
-    const connectionInstance = await mongoose.connect(`${mongoUri}/${DB_NAME}`);
+    const connectionInstance = await mongoose.connect(`${mongoUri}/airbnb`);
 
     console.log(
       `\nMongoDB connected successfully! DB HOST: ${connectionInstance.connection.host}`
@@ -25,4 +21,4 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+module.exports = connectDB; // Use CommonJS export

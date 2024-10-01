@@ -2,7 +2,6 @@
   "name": "airbackend",
   "version": "1.0.0",
   "description": "make airbnb backend",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules  src/server.js"
