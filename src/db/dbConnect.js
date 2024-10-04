@@ -10,7 +10,7 @@ const connectDB = async () => {
     }
 
     // Attempt to connect to MongoDB
-    const connectionInstance = await mongoose.connect(`${mongoUri}/airbnb`);
+    const connectionInstance = await mongoose.connect(`${mongoUri}/bdcalling`);
 
     console.log(
       `\nMongoDB connected successfully! DB HOST: ${connectionInstance.connection.host}`
